@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PassPhrase Generator </title>
+        <script language="JavaScript" src="md5.js"></script>
+        <script language="JavaScript" src="baseConverter.js"></script>
+        <script>
+            function readInput(a){
+                var newStr=calcMD5(a);
+                var i;
+                var strPass="";
+                var temp;
+                for(i=0;i<=32;i++){
+                    temp=(parseInt(newStr[i],16)*17) %93 +33;
+                    strPass=strPass.concat(String.fromCharCode(temp));
+                }
+                
+                return strPass;
+            }
+        </script>
+    </head>
+    <body>
+        <p>Generator:</p>
+        <form oninput="x.value=readInput(b.value)">
+             
+            <input type="text" id="b" value=""> 
+            <p>=</p>
+            <output name="x" for ="a b"></output>
+        </form>
+    </body>
+</html>
