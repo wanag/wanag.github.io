@@ -1,31 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>PassPhrase Generator </title>
-        <script language="JavaScript" src="md5.js"></script>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Wanag.GitHub.io : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <script language="JavaScript" src="md5.js"></script>
         <script language="JavaScript" src="baseConverter.js"></script>
         <script>
             function readInput(a){
                 var newStr=calcMD5(a);
+                var strPass="_";
                 var i;
-                var strPass="";
-                var temp;
-                for(i=0;i<=32;i++){
-                    temp=(parseInt(newStr[i],16)*17) %93 +33;
-                    strPass=strPass.concat(String.fromCharCode(temp));
-                }
-                
+                for(i=0,i<=9;i++){
+                    strPass=strPass.concat(newStr[i]);
+              }
+                strPass=strPass.concat(newStr[i].toUpperCase());
                 return strPass;
+   
             }
+            
         </script>
-    </head>
-    <body>
-        <p>Generator:</p>
-        <form oninput="x.value=readInput(b.value)">
+    <title>Wanag.GitHub.io</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/wanag">View on GitHub</a>
+
+          <h1 id="project_title">Wanag.GitHub.io</h1>
+          <h2 id="project_tagline"></h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p>This is a test passphrase generator:</p>
+<form oninput="x.value=readInput(b.value)">
              
             <input type="text" id="b" value=""> 
             <p>=</p>
             <output name="x" for ="a b"></output>
         </form>
-    </body>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
 </html>
