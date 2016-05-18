@@ -22,6 +22,17 @@
                 
                 return strPass;
             }
+            
+            function generatePass2(a){
+              var newStr=calcMD5(a);
+              var strPass="_";
+              var i;
+              for(i=0,i<=9;i++){
+                strPass=strPass.concat(newStr[i]);
+              }
+              strPass=strPass.concat(newStr[i].toUpperCase());
+              return strPass;
+            }
         </script>
     <title>Wanag.GitHub.io</title>
   </head>
@@ -53,7 +64,13 @@
             <output name="x" for ="a b"></output>
         </form>
 
-
+<p>This is another test code generator:</p>
+<form oninput="x.value=generatePass2(b.value)">
+             
+            <input type="text" id="b" value=""> 
+            <p>=</p>
+            <output name="x" for ="a b"></output>
+        </form>
       </section>
     </div>
 
